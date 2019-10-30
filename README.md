@@ -32,3 +32,7 @@ There are no known bugs currently.
 
 ## Contact Information
  nkurumwa51@gmail.com
+
+ ## Licence
+
+ MIT[2019] (Ishmael Nkurumwa)
