@@ -5,7 +5,6 @@ class Config:
 
   QUOTE_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
   SECRET_KEY = os.environ.get('SECRET_KEY')
-  # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URL')
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:ishmael@localhost/nkurumwa'
   SQLALCHEMY_TRACK_MODIFICATIONS = False
   
