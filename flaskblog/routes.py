@@ -4,17 +4,23 @@ from flaskblog.forms import RegistrationForm, LoginForm
 from flaskblog.models import User, Post
 
 posts = [
-    {
-        'author': 'Ishmael Nkurumwa',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
+     {
+        'author':'Ishmael Nkurumwa',
+        'title': 'Freedom',
+        'content': 'Freedom is the best thing you can ever have in your life!',
         'date_posted': 'April 20, 2018'
     },
     {
-      'author': 'Randy Nish',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018'  
+        'author':'Randy Nish',
+        'title': 'Success',
+        'content': 'If you want to go faster, walk alone but if you want to go far walk with others.',
+        'date_posted': 'April 10, 2019'
+    },
+    {
+        'author':'Nelson Mandela',
+        'title': 'Education',
+        'content': 'Education is the most powerful weapon you can use to change the world!',
+        'date_posted': 'June 16, 2009'
     }
 ]
 @app.route("/")
@@ -32,10 +38,8 @@ def register():
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Account created for {form.username.data}!', 'success')
-        return redirect(url_for('home'))
+        flash(f'Account created for {form.username.data}! You can now login.', 'success')
+        return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
 @app.route("/login", methods=['GET', 'POST'])
