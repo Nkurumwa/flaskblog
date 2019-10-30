@@ -23,10 +23,10 @@ Open the application on your browser 127.0.0.1:5000.
 |-----------|---------|------------|
 
 ## Technology used
-Python3.6
-Flask
-Heroku
-sqlalchemy
+-Python3.6
+-Flask
+-Heroku
+-sqlalchemy
 
 ## Known Bugs
 There are no known bugs currently.
